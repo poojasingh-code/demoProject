@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./css/base.css" />
+  <script src="./js/base.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <form id="contact" action="" method="post">
+      <h3>Contact Form</h3>
+      <h4>Feel free to register!!!</h4>
+      <fieldset>
+        <input placeholder="Your name" type="text" id="name" tabindex="1" required autofocus>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Your Email Address" type="email" id="email" tabindex="2" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Your Phone Number (optional)" type="tel" id="tel" tabindex="3" maxlength='12' required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Your Web Site (optional)" type="url" id="url" tabindex="4" required>
+      </fieldset>
+      <fieldset>
+        <textarea placeholder="Type your message here...." tabindex="5" id="msg" required></textarea>
+      </fieldset>
+      <fieldset>
+        <button class="submitBtn" name="submit" type="submit" id="contact-submit"
+          data-submit="...Sending">Submit</button>
+      </fieldset>
+    </form>
+  </div>
+  <!--chat button-->
+  <button class="open-button" onclick="openForm()"><i class="fa fa-comments-o" aria-hidden="true"> chat</i></button>
+  <!--chat popup start-->
+  <div class="chat-popup" id="myForm">
+    <div class="form-container">
+      <h1>Chat</h1>
+      <label><b>Message</b></label>
+      <!-- <p id="chatLog">msg<br></p> -->
+      <div class="chatbox">
+        <img src="./images/img_avatar1.png" alt="Avatar" style="width:100%;">
+        <p id="chatLogBot">say hello to me<br></p>
+        <span class="time-right">11:02</span>
+      </div>
+
+      <div class="chatbox darker">
+        <img src="./images/img_avatar2.png" alt="Avatar" class="right" style="width:100%;">
+        <p id="chatLog"></p>
+        <span class="time-left">11:05</span>
+      </div>
+      <input id="userBox" type="text" size="45" onkeydown="if(event.keyCode==13){talk()}">
+      <!-- <button class="btn" id="myBtn">Send</button> -->
+      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </div>
+  </div>
+  <!--chat popup end-->
+  <!-- Modal start -->
+  <div id="modal" class="modal fade" role='dialog'>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title"><b>Form Data</b></h4>
+        </div>
+        <div class="modal-body" id="modal-body">
+          <p>Here the description starts here........</p>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Modal end-->
+
+</body>
+
+</html>
